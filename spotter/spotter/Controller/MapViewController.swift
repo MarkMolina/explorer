@@ -10,12 +10,15 @@ import UIKit
 import FloatingPanel
 import GoogleMaps
 
-private let MENU_CLOSED_OFFSET: CGFloat = 80
-private let MENU_OPEN_OFFSET: CGFloat = 440
-
 class MapViewController: UIViewController, FloatingPanelControllerDelegate {
     
     private let floatingPanelController = FloatingPanelController()
+    
+    private lazy var tapRecognizer: UITapGestureRecognizer = {
+        let recognizer = UITapGestureRecognizer()
+        recognizer.addTarget(self, action: #selector(menuTapped(recognizer:)))
+        return recognizer
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,14 +39,25 @@ class MapViewController: UIViewController, FloatingPanelControllerDelegate {
         view.addSubview(mapView)
         
         let menuViewController = MenuViewController()
+        menuViewController.view.addGestureRecognizer(tapRecognizer)
         floatingPanelController.delegate = self
-
         floatingPanelController.set(contentViewController: menuViewController)
-        floatingPanelController.addPanel(toParent: self)
+        present(floatingPanelController, animated: true, completion: nil)
     }
     
-    private func closedOffset() -> CGFloat {
-        return view.frame.height - MENU_CLOSED_OFFSET
+    @objc private func menuTapped(recognizer: UITapGestureRecognizer) {
+        
+        switch floatingPanelController.position {
+        case .full:
+            fallthrough
+        case .tip:
+            floatingPanelController.move(to: .half, animated: true)
+        case .half:
+            fallthrough
+        case .hidden:
+            fallthrough
+        default:
+            floatingPanelController.move(to: .tip, animated: true)
+        }
     }
-    
 }

@@ -224,6 +224,7 @@ PODS:
     - FirebaseAuthInterop (~> 1.1)
     - FirebaseCore (~> 6.6)
     - GTMSessionFetcher/Core (~> 1.1)
+  - FloatingPanel (1.7.4)
   - GoogleAppMeasurement (6.4.2):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
     - GoogleUtilities/MethodSwizzler (~> 6.0)
@@ -289,6 +290,7 @@ DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Firestore
   - Firebase/Storage
+  - FloatingPanel
   - GoogleMaps
 
 SPEC REPOS:
@@ -306,6 +308,7 @@ SPEC REPOS:
     - FirebaseFirestore
     - FirebaseInstallations
     - FirebaseStorage
+    - FloatingPanel
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
@@ -332,6 +335,7 @@ SPEC CHECKSUMS:
   FirebaseFirestore: f5c1798bf8ab3f7ce96adb5f259eed8c698941fd
   FirebaseInstallations: 2119fb3e46b0a88bfdbf12562f855ee3252462fa
   FirebaseStorage: f4f39ae834a7145963b913f54e2f24a9db1d8fac
+  FloatingPanel: 3c9d0e30fe350e1613157557769d2ec97f76b96b
   GoogleAppMeasurement: 2253e99c1f22638cf234c059144660c338ad76c3
   GoogleDataTransport: 061fe7d9b476710e3cd8ea51e8e07d8b67c2b420
   GoogleDataTransportCCTSupport: 0f39025e8cf51f168711bd3fb773938d7e62ddb5
@@ -344,6 +348,6 @@ SPEC CHECKSUMS:
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
 
-PODFILE CHECKSUM: 89a8e88abbabf654f8feca2b6a3947c1be38ccaa
+PODFILE CHECKSUM: 6ab36b476be812cfaedeb3460bbcc24d8ad3e607
 
 COCOAPODS: 1.9.1

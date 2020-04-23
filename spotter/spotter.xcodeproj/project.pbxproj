@@ -13,6 +13,7 @@
 		1EB7AE5D2451E0DB0038F147 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EB7AE5B2451E0DB0038F147 /* Main.storyboard */; };
 		1EB7AE5F2451E0DC0038F147 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EB7AE5E2451E0DC0038F147 /* Assets.xcassets */; };
 		1EB7AE622451E0DC0038F147 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EB7AE602451E0DC0038F147 /* LaunchScreen.storyboard */; };
+		B556FFAF319C485140AF7993 /* Pods_spotter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1168CC5954A4ABF4BE3A5A /* Pods_spotter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		1EB7AE5E2451E0DC0038F147 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1EB7AE612451E0DC0038F147 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1EB7AE632451E0DC0038F147 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1DB307738F0D345420249C2 /* Pods-spotter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spotter.debug.xcconfig"; path = "Target Support Files/Pods-spotter/Pods-spotter.debug.xcconfig"; sourceTree = "<group>"; };
+		CA1168CC5954A4ABF4BE3A5A /* Pods_spotter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_spotter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E298367F2EEA9B96422FB2E1 /* Pods-spotter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spotter.release.xcconfig"; path = "Target Support Files/Pods-spotter/Pods-spotter.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B556FFAF319C485140AF7993 /* Pods_spotter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				1EB7AE542451E0DB0038F147 /* spotter */,
 				1EB7AE532451E0DB0038F147 /* Products */,
+				BA7642807C41DEB1209EDC10 /* Pods */,
+				42CB4042C300617827E6A531 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = spotter;
 			sourceTree = "<group>";
 		};
+		42CB4042C300617827E6A531 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CA1168CC5954A4ABF4BE3A5A /* Pods_spotter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BA7642807C41DEB1209EDC10 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B1DB307738F0D345420249C2 /* Pods-spotter.debug.xcconfig */,
+				E298367F2EEA9B96422FB2E1 /* Pods-spotter.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1EB7AE662451E0DC0038F147 /* Build configuration list for PBXNativeTarget "spotter" */;
 			buildPhases = (
+				2F0CB71C5D29DAC617F2105B /* [CP] Check Pods Manifest.lock */,
 				1EB7AE4E2451E0DB0038F147 /* Sources */,
 				1EB7AE4F2451E0DB0038F147 /* Frameworks */,
 				1EB7AE502451E0DB0038F147 /* Resources */,
+				37463D9CCBEAAA4669899D6E /* [CP] Embed Pods Frameworks */,
+				2006CEF2E45EB4CF44C4DDD8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -132,6 +160,65 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2006CEF2E45EB4CF44C4DDD8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-spotter/Pods-spotter-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-spotter/Pods-spotter-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-spotter/Pods-spotter-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2F0CB71C5D29DAC617F2105B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-spotter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		37463D9CCBEAAA4669899D6E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-spotter/Pods-spotter-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-spotter/Pods-spotter-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-spotter/Pods-spotter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1EB7AE4E2451E0DB0038F147 /* Sources */ = {
@@ -282,6 +369,7 @@
 		};
 		1EB7AE672451E0DC0038F147 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1DB307738F0D345420249C2 /* Pods-spotter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +388,7 @@
 		};
 		1EB7AE682451E0DC0038F147 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E298367F2EEA9B96422FB2E1 /* Pods-spotter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

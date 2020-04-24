@@ -1,5 +1,5 @@
 //
-//  MapViewController.swift
+//  BelowMenuContentViewController.swift
 //  spotter
 //
 //  Created by Mark Anthony Molina on 23/04/2020.
@@ -8,9 +8,33 @@
 
 import UIKit
 import FloatingPanel
-import GoogleMaps
 
-class MapViewController: UIViewController, FloatingPanelControllerDelegate {
+private protocol FloatingMenuProtocol {
+    
+    var floatingPanelController: FloatingPanelController { get }
+    var tapRecognizer: UITapGestureRecognizer { get }
+}
+
+extension BelowMenuContentViewController {
+    
+    @objc private func menuTapped(recognizer: UITapGestureRecognizer) {
+        
+        switch floatingPanelController.position {
+        case .full:
+            fallthrough
+        case .tip:
+            floatingPanelController.move(to: .half, animated: true)
+        case .half:
+            fallthrough
+        case .hidden:
+            fallthrough
+        default:
+            floatingPanelController.move(to: .tip, animated: true)
+        }
+    }
+}
+
+class BelowMenuContentViewController: UIViewController, FloatingPanelControllerDelegate {
     
     private let floatingPanelController = FloatingPanelController()
     
@@ -35,29 +59,10 @@ class MapViewController: UIViewController, FloatingPanelControllerDelegate {
     private func setupViews() {
         navigationController?.setNavigationBarHidden(true, animated: false)
         
-        let mapView = GMSMapView(frame: view.frame)
-        view.addSubview(mapView)
-        
         let menuViewController = MenuViewController()
         menuViewController.view.addGestureRecognizer(tapRecognizer)
         floatingPanelController.delegate = self
         floatingPanelController.set(contentViewController: menuViewController)
         present(floatingPanelController, animated: true, completion: nil)
-    }
-    
-    @objc private func menuTapped(recognizer: UITapGestureRecognizer) {
-        
-        switch floatingPanelController.position {
-        case .full:
-            fallthrough
-        case .tip:
-            floatingPanelController.move(to: .half, animated: true)
-        case .half:
-            fallthrough
-        case .hidden:
-            fallthrough
-        default:
-            floatingPanelController.move(to: .tip, animated: true)
-        }
     }
 }

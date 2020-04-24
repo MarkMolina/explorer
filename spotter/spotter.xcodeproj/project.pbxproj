@@ -17,6 +17,9 @@
 		1EB7AE6E2451E3D30038F147 /* AppSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB7AE6D2451E3D30038F147 /* AppSetup.swift */; };
 		1EB7AE752451EE3A0038F147 /* BelowMenuContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB7AE742451EE3A0038F147 /* BelowMenuContentViewController.swift */; };
 		1EEFAC7B2451F5EF00F3F905 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEFAC7A2451F5EF00F3F905 /* MenuViewController.swift */; };
+		1EEFAC832452FC2200F3F905 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEFAC822452FC2200F3F905 /* MapViewController.swift */; };
+		1EEFAC852452FDDA00F3F905 /* MapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEFAC842452FDDA00F3F905 /* MapViewDelegate.swift */; };
+		1EEFAC882453089300F3F905 /* MyLocationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEFAC872453089300F3F905 /* MyLocationButton.swift */; };
 		B556FFAF319C485140AF7993 /* Pods_spotter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1168CC5954A4ABF4BE3A5A /* Pods_spotter.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +36,9 @@
 		1EB7AE6D2451E3D30038F147 /* AppSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSetup.swift; sourceTree = "<group>"; };
 		1EB7AE742451EE3A0038F147 /* BelowMenuContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelowMenuContentViewController.swift; sourceTree = "<group>"; };
 		1EEFAC7A2451F5EF00F3F905 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		1EEFAC822452FC2200F3F905 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		1EEFAC842452FDDA00F3F905 /* MapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewDelegate.swift; sourceTree = "<group>"; };
+		1EEFAC872453089300F3F905 /* MyLocationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLocationButton.swift; sourceTree = "<group>"; };
 		B1DB307738F0D345420249C2 /* Pods-spotter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spotter.debug.xcconfig"; path = "Target Support Files/Pods-spotter/Pods-spotter.debug.xcconfig"; sourceTree = "<group>"; };
 		CA1168CC5954A4ABF4BE3A5A /* Pods_spotter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_spotter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E298367F2EEA9B96422FB2E1 /* Pods-spotter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spotter.release.xcconfig"; path = "Target Support Files/Pods-spotter/Pods-spotter.release.xcconfig"; sourceTree = "<group>"; };
@@ -73,6 +79,7 @@
 			children = (
 				1EB7AE702451EDF60038F147 /* App */,
 				1EB7AE732451EE2B0038F147 /* Controller */,
+				1EEFAC862453087800F3F905 /* View */,
 				1EB7AE712451EE090038F147 /* Assets */,
 				1EB7AE722451EE150038F147 /* Property Lists */,
 			);
@@ -113,9 +120,19 @@
 			isa = PBXGroup;
 			children = (
 				1EB7AE742451EE3A0038F147 /* BelowMenuContentViewController.swift */,
+				1EEFAC822452FC2200F3F905 /* MapViewController.swift */,
+				1EEFAC842452FDDA00F3F905 /* MapViewDelegate.swift */,
 				1EEFAC7A2451F5EF00F3F905 /* MenuViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		1EEFAC862453087800F3F905 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1EEFAC872453089300F3F905 /* MyLocationButton.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		42CB4042C300617827E6A531 /* Frameworks */ = {
@@ -290,10 +307,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EB7AE562451E0DB0038F147 /* AppDelegate.swift in Sources */,
+				1EEFAC832452FC2200F3F905 /* MapViewController.swift in Sources */,
 				1EEFAC7B2451F5EF00F3F905 /* MenuViewController.swift in Sources */,
 				1EB7AE582451E0DB0038F147 /* SceneDelegate.swift in Sources */,
+				1EEFAC882453089300F3F905 /* MyLocationButton.swift in Sources */,
 				1EB7AE6E2451E3D30038F147 /* AppSetup.swift in Sources */,
 				1EB7AE752451EE3A0038F147 /* BelowMenuContentViewController.swift in Sources */,
+				1EEFAC852452FDDA00F3F905 /* MapViewDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

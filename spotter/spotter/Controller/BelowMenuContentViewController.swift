@@ -46,7 +46,7 @@ class BelowMenuContentViewController: UIViewController, FloatingPanelControllerD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViews()
+        //setupViews()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

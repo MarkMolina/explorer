@@ -13,6 +13,7 @@ class MapViewController: BelowMenuContentViewController {
     
     private let delegate: MapViewDelegate = MapViewDelegate()
     private let myLocationButton = MyLocationButton()
+    private var mapView: GMSMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,18 +22,19 @@ class MapViewController: BelowMenuContentViewController {
     }
     
     private func setupViews() {
-        let mapView = GMSMapView(frame: view.frame)
+        mapView = GMSMapView(frame: view.frame)
         mapView.delegate = delegate
         mapView.isMyLocationEnabled = true
         view.addSubview(mapView)
         
+        myLocationButton.addTarget(self, action: #selector(zoomToUserLocation), for: .touchUpInside)
         view.addSubview(myLocationButton)
     }
     
     private func layout() {
         let constraints = [
-            myLocationButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
-            myLocationButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50)
+            myLocationButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50 - bottomMargin),
+            myLocationButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ]
         
         NSLayoutConstraint.activate(constraints)
@@ -41,11 +43,12 @@ class MapViewController: BelowMenuContentViewController {
 
 extension MapViewController {
     
-    private func zoomToUserLocation(mapView: GMSMapView) {
+    @objc private func zoomToUserLocation() {
         
         guard let userLocation = mapView.myLocation else { return }
+        
         let camera = GMSCameraUpdate.setTarget(CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude), zoom: 14.0)
-        mapView.moveCamera(camera)
+        mapView.animate(with: camera)
         
     }
 }
